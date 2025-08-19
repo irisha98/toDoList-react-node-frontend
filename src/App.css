@@ -1,0 +1,117 @@
+body {
+  background-color: #0d0d0d;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.calendar {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.1);
+  flex: 1;
+  min-width: 300px;
+  border: 1px solid #444;
+  overflow: hidden;
+}
+.calendar-block {
+  background-color: #1a1a1a;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(255, 255, 0, 0.08);
+  transition: all 0.3s ease;
+}
+.task-block, .calendar-block {
+  box-shadow: 0 0 16px rgba(255, 255, 0, 0.05);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.days-names, .row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  color: #e2e2e2;
+  margin-top: 10px;
+}
+.row {
+  border-collapse: collapse;
+}
+.cell {
+  padding: 20px ;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #444; 
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+  border-left: none;
+  border-bottom: none;
+}
+.cell:hover {
+  background-color: #333;
+}
+
+.disabled {
+  color: #ccc;
+}
+
+.selected {
+  background-color: #f0c040;
+  color: #121111;
+  border-radius: 50%;
+  font-weight: 600;
+}
+.has-task:not(.selected) {
+  background-color: #f1c40f44;
+  border-radius: 50%;
+}
+
+.planner-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+  padding: 50px;
+  flex-wrap: wrap; 
+}
+
+.task-block {
+  flex: 0 0 300px;
+  background-color: #1a1a1a;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.05);
+  color: white;
+}
+
+.task-block h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+.task-block input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background-color: #0d0d0d;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.task-block button {
+  background-color: #f1c40f;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
