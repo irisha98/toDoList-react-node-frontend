@@ -1,6 +1,7 @@
 import axios from "axios";
 const getAllList = (setList) => {
-  axios.get(`https://todolist-react-node-backend.onrender.com/getList`).then(({ data }) => {
+  axios.get(`https://todolist-react-node-backend.onrender.com/`).then(({ data }) => {
+    
     console.log(data);
     setList(data);
   });
