@@ -1,6 +1,6 @@
 import axios from "axios";
 const getAllList = (setList) => {
-  axios.get(`https://todolist-react-node-backend.onrender.com`).then(({ data }) => {
+  axios.get(`https://todolist-react-node-backend.onrender.com/getList`).then(({ data }) => {
     console.log(data);
     setList(data);
   });
@@ -24,7 +24,7 @@ const addList = (name, setName, setList, selectedDate) => {
   console.log(newTask);
 
   axios
-    .post(`https://todolist-react-node-backend.onrender.com`, newTask)
+    .post(`https://todolist-react-node-backend.onrender.com/saveList`, newTask)
     .then(({ data }) => {
       console.log("Добавлено:", data);
       setName("");
@@ -35,7 +35,7 @@ const addList = (name, setName, setList, selectedDate) => {
 
 const editList = (listId, name, setName, setList, setEditing, selectedDate) => {
   axios
-    .put(`https://todolist-react-node-backend.onrender.com`, {
+    .put(`https://todolist-react-node-backend.onrender.com/editList`, {
       _id: listId,
       name,
       date: selectedDate.toISOString(),
@@ -49,7 +49,7 @@ const editList = (listId, name, setName, setList, setEditing, selectedDate) => {
 };
 const deleteList = (_id, setList) => {
   axios
-    .delete(`https://todolist-react-node-backend.onrender.com`, { data: { _id } })
+    .delete(`https://todolist-react-node-backend.onrender.com/deleteList`, { data: { _id } })
     .then((data) => {
       console.log(data);
       getAllList(setList);
