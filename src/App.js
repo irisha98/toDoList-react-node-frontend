@@ -5,7 +5,7 @@ import Calendar from './Calendar';
 function App() {
   return (
     <div className="App">
-      <h1>Life Planner</h1>
+      <h1 className='title'>Life Planner</h1>
       <Calendar />
     </div>
   );

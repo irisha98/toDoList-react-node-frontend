@@ -5,9 +5,13 @@ body {
   margin: 0;
   padding: 0;
 }
-
+.title{
+  display: flex;
+  justify-content: center;
+  
+}
 .calendar {
-  width: 100%;
+  /* width: 100%; */
   max-width: 600px;
   margin: auto;
   background-color: #1a1a1a;
@@ -48,7 +52,6 @@ body {
 .cell {
   padding: 20px ;
   text-align: center;
-  cursor: pointer;
   border: 1px solid #444; 
   cursor: pointer;
   font-size: 0.9rem;
@@ -81,7 +84,6 @@ body {
   align-items: center;
   gap: 150px;
   padding: 50px;
-  flex-wrap: wrap; 
 }
 
 .task-block {
@@ -115,3 +117,69 @@ body {
   font-weight: 500;
   cursor: pointer;
 }
+
+
+@media (max-width: 1024px) {
+  .planner-container {
+    gap: 50px;
+    padding: 30px;
+  }
+  .calendar-block, .task-block {
+    padding: 20px;
+  }
+  .cell {
+    padding: 15px;
+    font-size: 0.85rem;
+  }
+  .task-block h3 {
+    font-size: 1rem;
+  }
+  .task-block input {
+    padding: 6px;
+  }
+  .task-block button {
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .planner-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .calendar-block, .task-block {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .days-names, .row {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .cell {
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+
+  .header h2 {
+    font-size: 1.2rem;
+  }
+
+  .task-block h3 {
+    font-size: 0.95rem;
+  }
+
+  .task-block input {
+    padding: 5px;
+  }
+
+  .task-block button {
+    padding: 5px 8px;
+    font-size: 0.85rem;
+  }
+}
+
+
